@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Movie list{% endblock %}
+{% block content %}
+    <h1 class="title">List Swimmers</h1>
+<!doctype html>
+<html>
+   <body>
+      <table border = 1 class="table is-striped is-fullwidth">
+         <thead background="yellow">
+            <td>Update</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>CRUD action</td>
+
+         </thead>
+
+         {% for row in rows: %}
+            <tr>
+               <td>{{row[0]}}</td>
+               <td>{{row[1]}}</td>
+               <td>{{row[2]}}</td>
+               <td>{{row[3]}}</td>
+                <td><form method="post" action="/update_swimmer">
+                    <input type="hidden" name="userid" value="{{row[0]}}">
+                    <input type="hidden" name="firstname" value="{{row[1]}}">
+                    <input type="submit" value="Update" class="primary"></form></td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>
+{% endblock %}

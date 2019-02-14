@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}Movie list{% endblock %}
+{% block content %}
+    <h1 class="title">Swimmers</h1>
+
+    {% if swimmers %}
+    <table class="table is-striped is-fullwidth">
+        <tr>
+          <th>First Name:</th>
+            <th>Last Name:</th>
+            <th>Email:</th>
+      </tr>
+      {% for swimmer in swimmers or [] %}
+      <tr>
+        <td>
+          {{ swimmer.firstname }}
+        </td>
+           <td>
+          {{ swimmer.lastname }}
+        </td>
+           <td>
+          {{ swimmer.userid }}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

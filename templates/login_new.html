@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <section class="hero" bgcolor="#3cb371">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <h3 class="title has-text-grey">Feltham Swimming Club Login</h3>
+              <div class="box"> <h3 style="background-color:rgb(120, 120, 120));"> {{ msg }}  {{ session['username']}}</h3> </b> <br><br>
+      <form action="" method="post" style="form">
+          <div class="label">
+              <label>Username</label>
+          <div class="field">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}"> <br>
+          </div>
+          </div>
+           <div class="field">
+               <div class="label">
+                   <label>Password</label>
+                   <div class="field">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}"> <br>
+           </div>
+                   </div>
+        <input class="button is-block is-info is-large is-fullwidth" type="submit" value="Login">
+      </form>
+      {% if error %}
+                <p class="error"><strong>Error:</strong> {{ error }} </p>
+      {% endif %}
+
+    </div>
+
+            </div>
+          </div>
+        </div>
+    </section>
+{% endblock %}

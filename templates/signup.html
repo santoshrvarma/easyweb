@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+{% block title %}Edit movie{% endblock %}
+{% block content %}
+<div class="watermark">
+<table bgcolor="#3cb371">
+    <th><h1 class="header">Application for Membership</h1></th><br>
+    <tr> <td>
+    <form action="/addrec" method="post">
+      <div class="field">
+        <label for="First Name" class="label">First Name</label>
+        <div class="control">
+          <input type="text" name="fname" class="input" required="required"/>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="Last Name" class="label">Last Name</label>
+        <div class="control">
+          <input type="text" name="lname" class="input"/>
+        </div>
+      </div>
+
+        <div class="field">
+        <label for="Address" class="label">Address</label>
+        <div class="control">
+          <input type="text" name="address" class="input"/>
+        </div>
+      </div>
+
+        <div class="field">
+        <label for="Postcode" class="label">Postcode</label>
+        <div class="control">
+          <input type="text" name="postcode" class="input"/>
+        </div>
+      </div>
+
+        <div class="field">
+        <label for="dob" class="label">Date of Birth</label>
+        <div class="control">
+          <input type="text" name="dob" class="input"/>
+        </div>
+      </div>
+
+       <div class="field">
+        <label for="gender" class="label">Gender</label>
+        <div class="control">
+            <input type="radio" name="gender" value="male" checked> Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="female"> Female
+        </div>
+      </div>
+
+        <div class="field">
+        <label for="phone1" class="label">Phone1</label>
+        <div class="control">
+          <input type="text" name="phone1" class="input"/>
+        </div>
+      </div>
+
+         <div class="field">
+        <label for="phone2" class="label">Phone2</label>
+        <div class="control">
+          <input type="text" name="phone2" class="input"/>
+        </div>
+      </div>
+
+
+        <div class="field">
+        <label for="email" class="label">Email</label>
+        <div class="control">
+          <input type="text" name="email" class="input"/>
+        </div>
+      </div>
+
+        <div class="field">
+        <label for="medical" class="label">Do you suffer from any medical complaints that Feltham Swimming Club
+            should be aware of ?</label>
+        <div class="control">
+          <input type="radio" name="medical" value="Yes" checked> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="medical" value="No"> No
+        </div>
+      </div>
+
+       <div class="field">
+        <label for="medicaltext" class="label">Details of medical conditions</label>
+        <div class="control">
+          <input type="text" name="medicaltext" class="input"/>
+        </div>
+      </div>
+
+
+        <div class="field">
+        <label for="oclub_member" class="label">Are you member of any other club ?</label>
+        <div class="control">
+          <input type="radio" name="oclub_member" value="Yes" checked> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="oclub_member" value="No"> No
+        </div>
+      </div>
+
+       <div class="field">
+        <label for="oclubname" class="label">Name of other Club</label>
+        <div class="control">
+          <input type="text" name="medicaltext" class="input"/>
+        </div>
+      </div>
+
+        <div class="field">
+        <label for="oclublength" class="label">Length of time</label>
+        <div class="control">
+          <input type="text" name="length" class="input"/>
+        </div>
+      </div>
+
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+
+       <div class="field">
+        <label for="club_gdpr" class="label">Data protection Act : Do you object Feltham Swimming Club holding records of your membership
+         and swimming achievements electronically?</label>
+        <div class="control">
+          <input type="radio" name="club_gdpr" value="Yes" checked> Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="club_gdpr" value="No"> No
+        </div>
+      </div>
+
+        </td>
+    </tr>
+
+    <tr>
+    <td>
+
+         <div class="field">
+             <div class="control"><b>
+                <input type="checkbox" name="consent" value="Yes">
+             I WISH TO APPLY FOR MEMBERSHIP TO <U>FELTHAM SWIMMING CLUB</U> FOR THE YEAR
+                 COMMENCING 1ST JANUARY 2019 AND AGREE TO ABIDE BY THE CLUB RULES AND CODE OF CONDUCT </label>
+             </b>
+             </div>
+
+      </div>
+
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+        <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary is-big">Register Me</button>
+        </div>
+      </div>
+    </td>
+    </tr>
+</form>
+    </table>
+</div>
+{% endblock %}

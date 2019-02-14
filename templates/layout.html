@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>My movies - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"/>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='mymovies.css') }}"/>
+  </head>
+  <body>
+    <header>
+         {% for message in get_flashed_messages() %}
+        <div class="notification is-info">{{ message }}</div>
+        {% endfor %}
+
+      <nav class="navbar" aria-label="main navigation">
+       {% if 'username' in session %}
+        <div class="navbar-brand">
+          <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('home_page') }}">Home</a>
+          </span>
+          <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('list') }}">List</a>
+          </span>
+           <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('fixture_page') }}">Fixtures</a>
+          </span>
+             <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('performance_page') }}">Performance</a>
+          </span>
+            <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('signup_page') }}">Sign up</a>
+          </span>
+
+            <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('logout') }}">logout</a>
+          </span>
+
+        </div>
+
+          {% else %}
+           <div class="navbar-brand">
+               <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('signup_page') }}">Sign up</a>
+          </span>
+          </span>
+            <span class="navbar-item">
+            <a class="button is-link" href="{{ url_for('login_page') }}">Login</a>
+          </span>
+        </div>
+        {% endif %}
+      </nav>
+
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="content">
+          {% block content %}{% endblock %}
+        </div>
+      </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2015-2018, Feltham Swimming Club</small>
+    </footer>
+  </body>
+</html>
