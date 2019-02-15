@@ -49,20 +49,19 @@ SESSION_TYPE = 'memcache'
 
 @app.route('/list')
 def list():
-    suname= []
-    suname[0] = session.username
-    sql = """ select * from qregswimmer where email = %s """
-    cur.execute(sql, (suname[0]))
+    suname = 'santoshrvarma@gmail.com'
+    sql = """ select * from qregswimmer"""
+    cur.execute(sql)
     rows = cur.fetchall()
     return render_template("list.html", rows=rows)
 
 @app.route('/')
 def index():
     try:
-        userId = verifySessionId()
+        userId = verifySessionId
         session_userId =  str(userId)
         cur = conn.cursor()
-        sql = " select username, passwordsalt from logins where username = %s "
+        sql = " select username, passwordsalt from logins"
         cur.execute(sql, (session_userId))
         rows = cur.fetchall()
         return render_template("list.html")
